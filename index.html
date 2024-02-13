@@ -1,9 +1,111 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>if you found this you are the true sigma gamer!!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repository Folders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .folder-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .folder-link:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-  <p>sigmasigma</p>
-</body>
+    <?php
+    $folders = [
+        "1",                         "breaklock",                    "ducklife",                       "grindcraft",             "motox3m2",              "sandboxels",                 "tacticalassasin2",
+"10-minutes-till-dawn",      "breakout",                     "ducklife1",                      "grow-in-the-hole",       "motox3mwinter",         "scrambled-eggs",             "tail-of-the-dragon",
+"100ng",                     "btd4",                         "ducklife2",                      "gun-mayhem-2",           "my-friend-pedro",       "scrapmetal",                 "tam-indian-truck-simulator-3d",
+"1v1lol",                    "btts",                         "ducklife3",                      "gun-mayhem-redux",       "n-gon",                 "senya-and-oscar-2",          "tank-trouble-2",
+"1v1space",                  "burning-man-2",                "ducklife4",                      "gun-mayhem",             "ninja",                 "sg",                         "tanuki-sunset",
+"2020-game",                 "cannon-basketball-4",          "duke-dashington-remastered",     "gunspin",                "ninjavsevilcorp",       "shadow-world-adventure",     "temple-run-2",
+"2048-multitask",            "canyondefense",                "dungeon-craft",                  "hackertype",             "ns-shaft",              "shards",                     "tetris",
+"2048",                      "captaincallisto",              "edge-surf",                      "happy-hop",              "om-bounce",             "shift-flash-2",              "the-final-earth-2",
+"8ball-billards-classic",    "cars-simulator",               "edgenotfound",                   "happy-wheels",           "one-screen-run-2",      "shift-flash",                "the-final-earth",
+"9007199254740992",          "cell-machine",                 "elastic-face",                   "hba",                    "one-screen-run",        "short-life-2",               "the-impossible-quiz-2",
+"DogeMiner",                 "championarcher",               "elasticman",                     "helicopter",             "osu",                   "short-ride",                 "the-impossible-quiz",
+"FullScreenMario",           "chess",                        "emulator-js",                    "helios",                 "ovo",                   "shuttledeck",                "the-little-giant",
+"HexGL",                     "chill-radio",                  "endlesswar3",                    "hexempire",              "packabunchas",          "skyblock",                   "thebattle",
+"OfflineParadise",           "chromaincident",               "escapingtheprison",              "hextris",                "pacman-fps",            "sleepingbeauty",             "theheist",
+"Squid Gun Fest",           "chrome-dino",                  "evil-glitch",                    "house-of-hazards",       "pacman",                "slice-of-sasha",             "themazeofspacegoblins",
+"Stickman-Survival",         "chromedino",                   "evilglitch",                     "icys-purple-head",       "pandemic2",             "slither snake",             "there-is-no-game",
+"achievementunlocked",       "circlo",                       "evolution",                      "idle-breakout",          "papa-louie",            "slither",                    "thisistheonlylevel",
+"adarkroom",                 "city-blocks-2",                "exo",                            "idle-shark",             "papas-burgeria",        "slope-ball",                 "time-shooter-3",
+"adrenalinechallenge",       "clean-up-io",                  "factory-balls-forever",          "impossiblequiz",         "papas-freezeria",       "slope",                      "tiny-fishing",
+"age-of-war",                "cluster-rush",                 "factoryballs",                   "interactivebuddy",       "papas-hot-doggeria",    "slope2",                     "tiny-fragments",
+"alien-invaders-io",         "color-switch-2-challenges",    "factoryballsforever",            "iscribble-io",           "papas-pancakeria",      "sm63",                       "tiny-islands",
+"alienhominid",              "connect3",                     "fake-virus",                     "jelly-truck",            "papas-pizzeria",        "sm64",                       "topple-adventure",
+"align-4",                   "cookie-clicker",               "fancypantsadventures",           "jetpack",                "papas-sushiria",        "smashkarts",                 "tosstheturtle",
+"among-us",                  "cookieclicker",                "fbwg",                           "jimothy-piggerton",      "papas-wingeria",        "smokingbarrels",             "tough-growth",
+"angry-birds",               "core-ball",                    "finns-fantastic-food-machine",   "just-one-boss",          "papasburgeria",         "snake",                      "towermaster",
+"anti-terrorist-rush",       "craftmine",                    "fireboywatergirlforesttemple",   "justfall",               "papaspizzaria",         "snowbattle",                 "townscaper",
+"arcade-wizard",             "creativekillchamber",          "fireice",                        "kart-fight-io",          "paperio2",              "soldier-legend",             "trimps",
+"asciispace",                "crossyroad",                   "firewater",                      "kitchen-gun-game",       "papery-planes",         "solitaire",                  "tube-jumpers",
+"aspiring-artist",          "crowd city 2",                "flappy-2048",                    "kittencannon",           "particle-clicker",      "sonic-the-hedgehog",         "tunnel-rush",
+"asteroids",                 "csgo-clicker",                 "flappy-bird",                    "klocki",                 "particleclicker",       "sort-the-court",             "tunnelz",
+"astray",                    "ctr-holiday",                  "flappy-defense",                 "konnekt",                "path-finder",           "soundboard",                 "tv-static",
+"avalanche",                 "ctr-tr",                       "flappybird",                     "krunker",                "pe-noire",              "space-company",              "twitch-tetris",
+"awesome-tanks-2",           "ctr",                          "flashtetris",                    "learntofly",             "pikwip",                "spacecompany",               "underrun",
+"backcountry",               "cubefield",                    "flippy-fish",                    "learntofly2",            "pixel-cave",            "spacegarden",                "unfold-2",
+"backflip-dive-3d",          "cupcake2048",                  "flood-runner-2",                 "line-rider",             "pizzeria-simulator",    "spacehuggers",               "up-left-out",
+"backrooms",                 "cuttherope",                   "fridaynightfunkin",              "linquest",               "polybranch",            "spelunky",                   "veloce",
+"bad-ice-cream-2",           "cuttherope2",                  "friendlyfire",                   "madalin-stunt-cars-2",   "popcat-classic",        "ssf",                        "vex3",
+"bad-ice-cream-3",           "dadish",                       "froggys-battle",                 "madalin-stunt-cars-3",   "portalflash",           "stack-bump-3d",              "vex4",
+"bad-ice-cream",             "dadish3",                      "fruitninja",                     "makeitmeme",             "precision-client",      "stack",                      "vex5",
+"baldis-basics",             "dadishtwo",                    "frying-nemo",                    "mario",                  "protektor",             "station-141",                "vex6",
+"basket-bros-io",            "dante",                        "game-inside",                    "marvinspectrum",         "push-the-square",       "stealingthediamond",         "vex7",
+"basketball-io",             "deal-or-no-deal",              "generic-fishing-game",           "matrixrampage",          "push-your-luck",        "stick-archers-battle",       "waterworks",
+"basketball-legends-2020",   "death-run-3d",                 "geodash-2",                      "mc1.5.2",                "pushback",              "stickclimb",                 "webretro",
+"basketball-stars",          "death-soul",                   "geodash",                        "mcbeta0.30",             "puzzle-ball",           "stickman-boost",             "winter-falling-price",
+"battleforgondor",           "deathrun",                     "geometry_jump_sketchy",          "mcbeta1.3",              "pvz-2",                 "stickman-dismount",          "wipo",
+"bigredbutton",              "defend-the-tank",              "geometrydash",                   "meat-boy",               "q1k3",                  "stickman-epic-battle",       "wolf3d",
+"binding-of-isaac",          "dino",                         "georgeandtheprinter",            "meme2048",               "racer",                 "stickman-golf",              "wordle",
+"bitlife",                   "doctor-acorn2",                "getaway-shootout",               "minecraft-classic",      "radiusraid",            "stickman",                   "worlds-hardest-game-2",
+"blacholesquare",            "dodge",                        "getting-over-it",                "minecraft",              "retro-bowl",            "stickwar",                   "worlds-hardest-game",
+"blackholesquare",           "doge-miner-2",                 "gimme-the-airpod",               "minecraftbeta",          "retrobowl",             "stormthehouse2",             "x-trial-racing",
+"blackknight",               "doge-mining-simulator",        "glass-city",                     "minesweeper",            "retrohaunt",            "subway-surfers-bali",        "xx142-b2exe",
+"blocky-snakes",             "doge2048",                     "go-ball",                        "mini-stilts",            "rise-of-neon-square",   "subway-surfers",             "yoshifabrication",
+"bloonstd",                  "dont-drop-the-white-ball-2",   "golf",                           "miniputt",               "roadblocks",            "super-mario-maker-online",   "you-are-bezos",
+"bloonstd2",                 "doodle-jump",                  "goodnight",                      "missiles",               "rocking-sky-trip",      "super-puffer-fish-3d",       "zig-zag",
+"bloxors",                   "doublewires",                  "google-snake",                   "moto-x3m-2",             "rolling-forests",       "superhero-io",               "zombocalypse",
+"bounceback",                "douchebag-workout-2",          "google-solitaire",               "moto-x3m-pool-party",    "rolly-vortex",          "superhot",                   "zombs-royale",
+"boxel-rebound",             "dragon-vs-bricks",             "gopher",                         "motox3m-pool",           "rooftop-snipers",       "supermarioconstruct",
+"boxhead2play",              "draw-the-hill",                "gravity-soccer",                 "motox3m-spooky",         "run-3",                 "swerve",
+"brave-explorers",           "drive-mad",                    "green",                          "motox3m-winter",         "run3",                  "synesthesia",
+"breakingthebank",           "duck-life-treasurehunt",       "greybox",                        "motox3m",                "sand-game",             "tactical-weapon-pack-2"
 
+        
+    ];
+
+    foreach ($folders as $folder) {
+        echo '<a href="' . $folder . '/index.html" class="folder-link">' . $folder . '</a>';
+    }
+    ?>
+</body>
 </html>
