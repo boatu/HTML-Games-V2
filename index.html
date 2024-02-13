@@ -1,111 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Repository Folders</title>
+    <title>Folder Links</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-        }
-
         .folder-link {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: inline-block;
             width: 100px;
             height: 100px;
             margin: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid black;
             text-decoration: none;
-            color: #333;
-        }
-
-        .folder-link:hover {
-            background-color: #f0f0f0;
+            color: black;
         }
     </style>
 </head>
+
 <body>
-    <?php
-    $folders = [
-        "1",                         "breaklock",                    "ducklife",                       "grindcraft",             "motox3m2",              "sandboxels",                 "tacticalassasin2",
-"10-minutes-till-dawn",      "breakout",                     "ducklife1",                      "grow-in-the-hole",       "motox3mwinter",         "scrambled-eggs",             "tail-of-the-dragon",
-"100ng",                     "btd4",                         "ducklife2",                      "gun-mayhem-2",           "my-friend-pedro",       "scrapmetal",                 "tam-indian-truck-simulator-3d",
-"1v1lol",                    "btts",                         "ducklife3",                      "gun-mayhem-redux",       "n-gon",                 "senya-and-oscar-2",          "tank-trouble-2",
-"1v1space",                  "burning-man-2",                "ducklife4",                      "gun-mayhem",             "ninja",                 "sg",                         "tanuki-sunset",
-"2020-game",                 "cannon-basketball-4",          "duke-dashington-remastered",     "gunspin",                "ninjavsevilcorp",       "shadow-world-adventure",     "temple-run-2",
-"2048-multitask",            "canyondefense",                "dungeon-craft",                  "hackertype",             "ns-shaft",              "shards",                     "tetris",
-"2048",                      "captaincallisto",              "edge-surf",                      "happy-hop",              "om-bounce",             "shift-flash-2",              "the-final-earth-2",
-"8ball-billards-classic",    "cars-simulator",               "edgenotfound",                   "happy-wheels",           "one-screen-run-2",      "shift-flash",                "the-final-earth",
-"9007199254740992",          "cell-machine",                 "elastic-face",                   "hba",                    "one-screen-run",        "short-life-2",               "the-impossible-quiz-2",
-"DogeMiner",                 "championarcher",               "elasticman",                     "helicopter",             "osu",                   "short-ride",                 "the-impossible-quiz",
-"FullScreenMario",           "chess",                        "emulator-js",                    "helios",                 "ovo",                   "shuttledeck",                "the-little-giant",
-"HexGL",                     "chill-radio",                  "endlesswar3",                    "hexempire",              "packabunchas",          "skyblock",                   "thebattle",
-"OfflineParadise",           "chromaincident",               "escapingtheprison",              "hextris",                "pacman-fps",            "sleepingbeauty",             "theheist",
-"Squid Gun Fest",           "chrome-dino",                  "evil-glitch",                    "house-of-hazards",       "pacman",                "slice-of-sasha",             "themazeofspacegoblins",
-"Stickman-Survival",         "chromedino",                   "evilglitch",                     "icys-purple-head",       "pandemic2",             "slither snake",             "there-is-no-game",
-"achievementunlocked",       "circlo",                       "evolution",                      "idle-breakout",          "papa-louie",            "slither",                    "thisistheonlylevel",
-"adarkroom",                 "city-blocks-2",                "exo",                            "idle-shark",             "papas-burgeria",        "slope-ball",                 "time-shooter-3",
-"adrenalinechallenge",       "clean-up-io",                  "factory-balls-forever",          "impossiblequiz",         "papas-freezeria",       "slope",                      "tiny-fishing",
-"age-of-war",                "cluster-rush",                 "factoryballs",                   "interactivebuddy",       "papas-hot-doggeria",    "slope2",                     "tiny-fragments",
-"alien-invaders-io",         "color-switch-2-challenges",    "factoryballsforever",            "iscribble-io",           "papas-pancakeria",      "sm63",                       "tiny-islands",
-"alienhominid",              "connect3",                     "fake-virus",                     "jelly-truck",            "papas-pizzeria",        "sm64",                       "topple-adventure",
-"align-4",                   "cookie-clicker",               "fancypantsadventures",           "jetpack",                "papas-sushiria",        "smashkarts",                 "tosstheturtle",
-"among-us",                  "cookieclicker",                "fbwg",                           "jimothy-piggerton",      "papas-wingeria",        "smokingbarrels",             "tough-growth",
-"angry-birds",               "core-ball",                    "finns-fantastic-food-machine",   "just-one-boss",          "papasburgeria",         "snake",                      "towermaster",
-"anti-terrorist-rush",       "craftmine",                    "fireboywatergirlforesttemple",   "justfall",               "papaspizzaria",         "snowbattle",                 "townscaper",
-"arcade-wizard",             "creativekillchamber",          "fireice",                        "kart-fight-io",          "paperio2",              "soldier-legend",             "trimps",
-"asciispace",                "crossyroad",                   "firewater",                      "kitchen-gun-game",       "papery-planes",         "solitaire",                  "tube-jumpers",
-"aspiring-artist",          "crowd city 2",                "flappy-2048",                    "kittencannon",           "particle-clicker",      "sonic-the-hedgehog",         "tunnel-rush",
-"asteroids",                 "csgo-clicker",                 "flappy-bird",                    "klocki",                 "particleclicker",       "sort-the-court",             "tunnelz",
-"astray",                    "ctr-holiday",                  "flappy-defense",                 "konnekt",                "path-finder",           "soundboard",                 "tv-static",
-"avalanche",                 "ctr-tr",                       "flappybird",                     "krunker",                "pe-noire",              "space-company",              "twitch-tetris",
-"awesome-tanks-2",           "ctr",                          "flashtetris",                    "learntofly",             "pikwip",                "spacecompany",               "underrun",
-"backcountry",               "cubefield",                    "flippy-fish",                    "learntofly2",            "pixel-cave",            "spacegarden",                "unfold-2",
-"backflip-dive-3d",          "cupcake2048",                  "flood-runner-2",                 "line-rider",             "pizzeria-simulator",    "spacehuggers",               "up-left-out",
-"backrooms",                 "cuttherope",                   "fridaynightfunkin",              "linquest",               "polybranch",            "spelunky",                   "veloce",
-"bad-ice-cream-2",           "cuttherope2",                  "friendlyfire",                   "madalin-stunt-cars-2",   "popcat-classic",        "ssf",                        "vex3",
-"bad-ice-cream-3",           "dadish",                       "froggys-battle",                 "madalin-stunt-cars-3",   "portalflash",           "stack-bump-3d",              "vex4",
-"bad-ice-cream",             "dadish3",                      "fruitninja",                     "makeitmeme",             "precision-client",      "stack",                      "vex5",
-"baldis-basics",             "dadishtwo",                    "frying-nemo",                    "mario",                  "protektor",             "station-141",                "vex6",
-"basket-bros-io",            "dante",                        "game-inside",                    "marvinspectrum",         "push-the-square",       "stealingthediamond",         "vex7",
-"basketball-io",             "deal-or-no-deal",              "generic-fishing-game",           "matrixrampage",          "push-your-luck",        "stick-archers-battle",       "waterworks",
-"basketball-legends-2020",   "death-run-3d",                 "geodash-2",                      "mc1.5.2",                "pushback",              "stickclimb",                 "webretro",
-"basketball-stars",          "death-soul",                   "geodash",                        "mcbeta0.30",             "puzzle-ball",           "stickman-boost",             "winter-falling-price",
-"battleforgondor",           "deathrun",                     "geometry_jump_sketchy",          "mcbeta1.3",              "pvz-2",                 "stickman-dismount",          "wipo",
-"bigredbutton",              "defend-the-tank",              "geometrydash",                   "meat-boy",               "q1k3",                  "stickman-epic-battle",       "wolf3d",
-"binding-of-isaac",          "dino",                         "georgeandtheprinter",            "meme2048",               "racer",                 "stickman-golf",              "wordle",
-"bitlife",                   "doctor-acorn2",                "getaway-shootout",               "minecraft-classic",      "radiusraid",            "stickman",                   "worlds-hardest-game-2",
-"blacholesquare",            "dodge",                        "getting-over-it",                "minecraft",              "retro-bowl",            "stickwar",                   "worlds-hardest-game",
-"blackholesquare",           "doge-miner-2",                 "gimme-the-airpod",               "minecraftbeta",          "retrobowl",             "stormthehouse2",             "x-trial-racing",
-"blackknight",               "doge-mining-simulator",        "glass-city",                     "minesweeper",            "retrohaunt",            "subway-surfers-bali",        "xx142-b2exe",
-"blocky-snakes",             "doge2048",                     "go-ball",                        "mini-stilts",            "rise-of-neon-square",   "subway-surfers",             "yoshifabrication",
-"bloonstd",                  "dont-drop-the-white-ball-2",   "golf",                           "miniputt",               "roadblocks",            "super-mario-maker-online",   "you-are-bezos",
-"bloonstd2",                 "doodle-jump",                  "goodnight",                      "missiles",               "rocking-sky-trip",      "super-puffer-fish-3d",       "zig-zag",
-"bloxors",                   "doublewires",                  "google-snake",                   "moto-x3m-2",             "rolling-forests",       "superhero-io",               "zombocalypse",
-"bounceback",                "douchebag-workout-2",          "google-solitaire",               "moto-x3m-pool-party",    "rolly-vortex",          "superhot",                   "zombs-royale",
-"boxel-rebound",             "dragon-vs-bricks",             "gopher",                         "motox3m-pool",           "rooftop-snipers",       "supermarioconstruct",
-"boxhead2play",              "draw-the-hill",                "gravity-soccer",                 "motox3m-spooky",         "run-3",                 "swerve",
-"brave-explorers",           "drive-mad",                    "green",                          "motox3m-winter",         "run3",                  "synesthesia",
-"breakingthebank",           "duck-life-treasurehunt",       "greybox",                        "motox3m",                "sand-game",             "tactical-weapon-pack-2"
+<a class="folder-link" href="1/index.html">1</a>
+<a class="folder-link" href="breaklock/index.html">breaklock</a>
+<a class="folder-link" href="ducklife/index.html">ducklife</a>
+<a class="folder-link" href="grindcraft/index.html">grindcraft</a>
+<a class="folder-link" href="motox3m2/index.html">motox3m2</a>
+<a class="folder-link" href="sandboxels/index.html">sandboxels</a>
+<a class="folder-link" href="tacticalassasin2/index.html">tacticalassasin2</a>
+<a class="folder-link" href="10-minutes-till-dawn/index.html">10-minutes-till-dawn</a>
+<a class="folder-link" href="breakout/index.html">breakout</a>
+<a class="folder-link" href="ducklife1/index.html">ducklife1</a>
+<a class="folder-link" href="grow-in-the-hole/index.html">grow-in-the-hole</a>
+<a class="folder-link" href="motox3mwinter/index.html">motox3mwinter</a>
+<a class="folder-link" href="scrambled-eggs/index.html">scrambled-eggs</a>
+<a class="folder-link" href="tail-of-the-dragon/index.html">tail-of-the-dragon</a>
+<a class="folder-link" href="100ng/index.html">100ng</a>
+<a class="folder-link" href="btd4/index.html">btd4</a>
+<a class="folder-link" href="ducklife2/index.html">ducklife2</a>
+<a class="folder-link" href="gun-mayhem-2/index.html">gun-mayhem-2</a>
+<a class="folder-link" href="my-friend-pedro/index.html">my-friend-pedro</a>
+<a class="folder-link" href="scrapmetal/index.html">scrapmetal</a>
+<a class="folder-link" href="tam-indian-truck-simulator-3d/index.html">tam-indian-truck-simulator-3d</a>
+<a class="folder-link" href="1v1lol/index.html">1v1lol</a>
+<a class="folder-link" href="btts/index.html">btts</a>
+<a class="folder-link" href="ducklife3/index.html">ducklife3</a>
+<a class="folder-link" href="gun-mayhem-redux/index.html">gun-mayhem-redux</a>
+<a class="folder-link" href="n-gon/index.html">n-gon</a>
+<a class="folder-link" href="senya-and-oscar-2/index.html">senya-and-oscar-2</a>
+<a class="folder-link" href="tank-trouble-2/index.html">tank-trouble-2</a>
+<a class="folder-link" href="1v1space/index.html">1v1space</a>
+<a class="folder-link" href="burning-man-2/index.html">burning-man-2</a>
+<a class="folder-link" href="ducklife4/index.html">ducklife4</a>
+<a class="folder-link" href="gun-mayhem/index.html">gun-mayhem</a>
+<a class="folder-link" href="ninja/index.html">ninja</a>
+<a class="folder-link" href="sg/index.html">sg</a>
+<a class="folder-link" href="tanuki-sunset/index.html">tanuki-sunset</a>
+<a class="folder-link" href="2020-game/index.html">2020-game</a>
+<a class="folder-link" href="cannon-basketball-4/index.html">cannon-basketball-4</a>
+<a class="folder-link" href="duke-dashington-remastered/index.html">duke-dashington-remastered</a>
+<a class="folder-link" href="gunspin/index.html">gunspin</a>
+<a class="folder-link" href="ninjavsevilcorp/index.html">ninjavsevilcorp</a>
+<a class="folder-link" href="shadow-world-adventure/index.html">shadow-world-adventure</a>
+<a class="folder-link" href="temple-run-2/index.html">temple-run-2</a>
+<a class="folder-link" href="2048-multitask/index.html">2048-multitask</a>
+<a class="folder-link" href="canyondefense/index.html">canyondefense</a>
+<a class="folder-link" href="dungeon-craft/index.html">dungeon-craft</a>
+<a class="folder-link" href="hackertype/index.html">hackertype</a>
+<a class="folder-link" href="ns-shaft/index.html">ns-shaft</a>
+<a class="folder-link" href="shards/index.html">shards</a>
+<a class="folder-link" href="2048/index.html">2048</a>
+<a class="folder-link" href="captaincallisto/index.html">captaincallisto</a>
+<a class="folder-link" href="edge-surf/index.html">edge-surf</a>
+<a class="folder-link" href="happy-hop/index.html">happy-hop</a>
+<a class="folder-link" href="om-bounce/index.html">om-bounce</a>
+<a class="folder-link" href="shift-flash-2/index.html">shift-flash-2</a>
+<a class="folder-link" href="the-final-earth-2/index.html">the-final-earth-2</a>
+<a class="folder-link" href="8ball-billards-classic/index.html">8ball-billards-classic</a>
+<a class="folder-link" href="cars-simulator/index.html">cars-simulator</a>
+<a class="folder-link" href="edgenotfound/index.html">edgenotfound</a>
+<a class="folder-link" href="happy-wheels/index.html">happy-wheels</a>
+<a class="folder-link" href="one-screen-run-2/index.html">one-screen-run-2</a>
+<a class="folder-link" href="shift-flash/index.html">shift-flash</a>
+<a class="folder-link" href="the-final-earth/index.html">the-final-earth</a>
+<a class="folder-link" href="9007199254740992/index.html">9007199254740992</a>
+<a class="folder-link" href="cell-machine/index.html">cell-machine</a>
+<a class="folder-link" href="elastic-face/index.html">elastic-face</a>
+<a class="folder-link" href="hba/index.html">hba</a>
+<a class="folder-link" href="one-screen-run/index.html">one-screen-run</a>
+<a class="folder-link" href="short-life-2/index.html">short-life-2</a>
+<a class="folder-link" href="the-impossible-quiz-2/index.html">the-impossible-quiz-2</a>
+<a class="folder-link" href="DogeMiner/index.html">DogeMiner</a>
+<a class="folder-link" href="championarcher/index.html">championarcher</a>
+<a class="folder-link" href="elasticman/index.html">elasticman</a>
+<a class="folder-link" href="helicopter/index.html">helicopter</a>
+<a class="folder-link" href="osu/index.html">osu</a>
+<a class="folder-link" href="papaspizzaria/index.html">papaspizzaria</a>
+<a class="folder-link" href="FullScreenMario/index.html">FullScreenMario</a>
+<a class="folder-link" href="chess/index.html">chess</a>
+<a class="folder-link" href="emulator-js/index.html">emulator-js</a>
+<a class="folder-link" href="helios/index.html">helios</a>
+<a class="folder-link" href="ovo/index.html">ovo</a>
+<a class="folder-link" href="shuttledeck/index.html">shuttledeck</a>
+<a class="folder-link" href="HexGL/index.html">HexGL</a>
+<a class="folder-link" href="chill-radio/index.html">chill-radio</a>
+<a class="folder-link" href="endlesswar3/index.html">endlesswar3</a>
+<a class="folder-link" href="hexempire/index.html">hexempire</a>
+<a class="folder-link" href="packabunchas/index.html">packabunchas</a>
+<a class="folder-link" href="skyblock/index.html">skyblock</a>
+<a class="folder-link" href="OfflineParadise/index.html">OfflineParadise</a>
+<a class="folder-link" href="chromaincident/index.html">chromaincident</a>
+<a class="folder-link" href="escapingtheprison/index.html">escapingtheprison</a>
+<a class="folder-link" href="hextris/index.html">hextris</a>
+<a class="folder-link" href="papaspizzeria/index.html">papaspizzeria</a>
+<a class="folder-link" href="Squid Gun Fest/index.html">Squid Gun Fest</a>
+<a class="folder-link" href="chromedino/index.html">chromedino</a>
+<a class="folder-link" href="evil-glitch/index.html">evil-glitch</a>
+<a class="folder-link" href="house-of-hazards/index.html">house-of-hazards</a>
+<a class="folder-link" href="papasburgeria/index.html">papasburgeria</a>
+<a class="folder-link" href="Stickman-Survival/index.html">Stickman-Survival</a>
+<a class="folder-link" href="chromedino/index.html">chromedino</a>
+<a class="folder-link" href="evilglitch/index.html">evilglitch</a>
+<a class="folder-link" href="icys-purple-head/index.html">icys-purple-head</a>
+<a class="folder-link" href="pandemic2/index.html">pandemic2</a>
+<a class="folder-link" href="slither snake/index.html">slither snake</a>
+<a class="folder-link" href="achievementunlocked/index.html">achievementunlocked</a>
+<a class="folder-link" href="circlo/index.html">circlo</a>
+<a class="folder-link" href="evolution/index.html">evolution</a>
+<a class="folder-link" href="idle-breakout/index.html">idle-breakout</a>
+<a class="folder-link" href="papa-louie/index.html">papa-louie</a>
+<a class="folder-link" href="slither/index.html">slither</a>
+<a class="folder-link" href="adarkroom/index.html">adarkroom</a>
+<a class="folder-link" href="city-blocks-2/index.html">city-blocks-2</a>
+<a class="folder-link" href="exo/index.html">exo</a>
+<a class="folder-link" href="idle-shark/index.html">idle-shark</a>
+<a class="folder-link" href="papas-burgeria/index.html">papas-burgeria</a>
+<a class="folder-link" href="slope-ball/index.html">slope-ball</a>
+<a class="folder-link" href="adrenalinechallenge/index.html">adrenalinechallenge</a>
+<a class="folder-link" href="clean-up-io/index.html">clean-up-io</a>
+<a class="folder-link" href="factory-balls-forever/index.html">factory-balls-forever</a>
+<a class="folder-link" href="impossiblequiz/index.html">impossiblequiz</a>
+<a class="folder-link" href="papas-freezeria/index.html">papas-freezeria</a>
+<a class="folder-link" href="slope/index.html">slope</a>
+<a class="folder-link" href="age-of-war/index.html">age-of-war</a>
+<a class="folder-link" href="cluster-rush/index.html">cluster-rush</a>
+<a class="folder-link" href="factoryballs/index.html">factoryballs</a>
+<a class="folder-link" href="interactivebuddy/index.html">interactivebuddy</a>
+<a class="folder-link" href="papas-hot-doggeria/index.html">papas-hot-doggeria</a>
+<a class="folder-link" href="slope2/index.html">slope2</a>
+<a class="folder-link" href="alien-invaders-io/index.html">alien-invaders-io</a>
+<a class="folder-link" href="color-switch-2-challenges/index.html">color-switch-2-challenges</a>
+<a class="folder-link" href="factoryballsforever/index.html">factoryballsforever</a>
+<a class="folder-link" href="iscribble-io/index.html">iscribble-io</a>
+<a class="folder-link" href="papas-pancakeria/index.html">papas-pancakeria</a>
+<a class="folder-link" href="slope/index.html">slope</a>
+<a class="folder-link" href="alienhominid/index.html">alienhominid</a>
+<a class="folder-link" href="connect3/index.html">connect3</a>
+<a class="folder-link" href="fake-virus/index.html">fake-virus</a>
+<a class="folder-link" href="jelly-truck/index.html">jelly-truck</a>
+<a class="folder-link" href="papas-pizzeria/index.html">papas-pizzeria</a>
+<a class="folder-link" href="align-4/index.html">align-4</a>
+<a class="folder-link" href="cookie-clicker/index.html">cookie-clicker</a>
+<a class="folder-link" href="fancypantsadventures/index.html">fancypantsadventures</a>
+<a class="folder-link" href="jetpack/index.html">jetpack</a>
+<a class="folder-link" href="papas-sushiria/index.html">papas-sushiria</a>
+<a class="folder-link" href="among-us/index.html">among-us</a>
+<a class="folder-link" href="cookieclicker/index.html">cookieclicker</a>
+<a class="folder-link" href="fbwg/index.html">fbwg</a>
+<a class="folder-link" href="jimothy-piggerton/index.html">jimothy-piggerton</a>
+<a class="folder-link" href="papas-wingeria/index.html">papas-wingeria</a>
+<a class="folder-link" href="angry-birds/index.html">angry-birds</a>
+<a class="folder-link" href="core-ball/index.html">core-ball</a>
+<a class="folder-link" href="finns-fantastic-food-machine/index.html">finns-fantastic-food-machine</a>
+<a class="folder-link" href="just-one-boss/index.html">just-one-boss</a>
+<a class="folder-link" href="papaspizzaria/index.html">papaspizzaria</a>
+<a class="folder-link" href="anti-terrorist-rush/index.html">anti-terrorist-rush</a>
+<a class="folder-link" href="craftmine/index.html">craftmine</a>
+<a class="folder-link" href="fireboywatergirlforesttemple/index.html">fireboywatergirlforesttemple</a>
+<a class="folder-link" href="kart-fight-io/index.html">kart-fight-io</a>
+<a class="folder-link" href="paperio2/index.html">paperio2</a>
+<a class="folder-link" href="basketbros/index.html">basketbros</a>
+<a class="folder-link" href="ctr-holiday/index.html">ctr-holiday</a>
+<a class="folder-link" href="flappy-2048/index.html">flappy-2048</a>
+<a class="folder-link" href="klocki/index.html">klocki</a>
+<a class="folder-link" href="path-finder/index.html">path-finder</a>
+<a class="folder-link" href="basketball-io/index.html">basketball-io</a>
+<a class="folder-link" href="ctr-tr/index.html">ctr-tr</a>
+<a class="folder-link" href="flappy-bird/index.html">flappy-bird</a>
+<a class="folder-link" href="puzzle-ball/index.html">puzzle-ball</a>
+<a class="folder-link" href="basketball-legends-2020/index.html">basketball-legends-2020</a>
+<a class="folder-link" href="death-run-3d/index.html">death-run-3d</a>
+<a class="folder-link" href="geodash-2/index.html">geodash-2</a>
+<a class="folder-link" href="pvz-2/index.html">pvz-2</a>
+<a class="folder-link" href="basketball-stars/index.html">basketball-stars</a>
+<a class="folder-link" href="death-soul/index.html">death-soul</a>
+<a class="folder-link" href="geometry_jump_sketchy/index.html">geometry_jump_sketchy</a>
+<a class="folder-link" href="radiusraid/index.html">radiusraid</a>
+<a class="folder-link" href="battleforgondor/index.html">battleforgondor</a>
+<a class="folder-link" href="deathrun/index.html">deathrun</a>
+<a class="folder-link" href="survival/index.html">survival</a>
+<a class="folder-link" href="bigredbutton/index.html">bigredbutton</a>
+<a class="folder-link" href="defend-the-tank/index.html">defend-the-tank</a>
+<a class="folder-link" href="synthesis/index.html">synthesis</a>
+<a class="folder-link" href="binding-of-isaac/index.html">binding-of-isaac</a>
+<a class="folder-link" href="dino/index.html">dino</a>
+<a class="folder-link" href="superhero-io/index.html">superhero-io</a>
+<a class="folder-link" href="bitlife/index.html">bitlife</a>
+<a class="folder-link" href="doctor-acorn2/index.html">doctor-acorn2</a>
+<a class="folder-link" href="super-mario-maker-online/index.html">super-mario-maker-online</a>
+<a class="folder-link" href="blacholesquare/index.html">blacholesquare</a>
+<a class="folder-link" href="dodge/index.html">dodge</a>
+<a class="folder-link" href="surf-ii/index.html">surf-ii</a>
+<a class="folder-link" href="blackholesquare/index.html">blackholesquare</a>
+<a class="folder-link" href="doge-miner-2/index.html">doge-miner-2</a>
+<a class="folder-link" href="surf-ii/index.html">surf-ii</a>
+<a class="folder-link" href="blocky-snakes/index.html">blocky-snakes</a>
+<a class="folder-link" href="doodle-jump/index.html">doodle-jump</a>
+<a class="folder-link" href="super-puffer-fish-3d/index.html">super-puffer-fish-3d</a>
+<a class="folder-link" href="bloxors/index.html">bloxors</a>
+<a class="folder-link" href="doublewires/index.html">doublewires</a>
+<a class="folder-link" href="superhot/index.html">superhot</a>
+<a class="folder-link" href="bounceback/index.html">bounceback</a>
+<a class="folder-link" href="douchebag-workout-2/index.html">douchebag-workout-2</a>
+<a class="folder-link" href="supermarioconstruct/index.html">supermarioconstruct</a>
+<a class="folder-link" href="boxel-rebound/index.html">boxel-rebound</a>
+<a class="folder-link" href="dragon-vs-bricks/index.html">dragon-vs-bricks</a>
+<a class="folder-link" href="supersmashflash2/index.html">supersmashflash2</a>
+<a class="folder-link" href="boxhead2play/index.html">boxhead2play</a>
+<a class="folder-link" href="draw-the-hill/index.html">draw-the-hill</a>
+<a class="folder-link" href="swerve/index.html">swerve</a>
+<a class="folder-link" href="brave-explorers/index.html">brave-explorers</a>
+<a class="folder-link" href="drive-mad/index.html">drive-mad</a>
+<a class="folder-link" href="synthesis/index.html">synthesis</a>
+<a class="folder-link" href="breakingthebank/index.html">breakingthebank</a>
+<a class="folder-link" href="duck-life-treasurehunt/index.html">duck-life-treasurehunt</a>
+<a class="folder-link" href="tacsworldwargame/index.html">tacsworldwargame</a>
+<a class="folder-link" href="bubble-shooter/index.html">bubble-shooter</a>
+<a class="folder-link" href="duck-hunt/index.html">duck-hunt</a>
+<a class="folder-link" href="tank-off/index.html">tank-off</a>
+<a class="folder-link" href="bubble-struggle-2/index.html">bubble-struggle-2</a>
+<a class="folder-link" href="dune-buggy/index.html">dune-buggy</a>
+<a class="folder-link" href="tank-trouble/index.html">tank-trouble</a>
+<a class="folder-link" href="bubble-trouble/index.html">bubble-trouble</a>
 
-        
-    ];
-
-    foreach ($folders as $folder) {
-        echo '<a href="' . $folder . '/index.html" class="folder-link">' . $folder . '</a>';
-    }
-    ?>
 </body>
+
 </html>
